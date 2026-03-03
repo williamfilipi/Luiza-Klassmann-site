@@ -1,13 +1,13 @@
 ---
 // Hero section - with background zoom, animated buttons, reduced bottom spacing
 ---
-<section id="inicio" class="relative min-h-[92vh] flex items-center pt-20 overflow-hidden">
+<section id="inicio" class="relative min-h-screen flex items-center pt-20 pb-32 overflow-hidden">
   <!-- Background Image with subtle zoom animation -->
   <div class="absolute inset-0 z-0 overflow-hidden">
     <img
-      src="/bg-hero.png"
+      src="/header.JPG"
       alt="Luiza Klassmann Massoterapia - Porto Alegre"
-      class="w-full h-full object-cover hero-bg-zoom"
+      class="w-full h-full object-cover hero-bg-zoom" style="object-position: center 30%"
       referrerpolicy="no-referrer"
       loading="eager"
     />
@@ -59,11 +59,11 @@
 <style>
   /* ── Background slow zoom ── */
   .hero-bg-zoom {
-    animation: heroZoom 14s ease-out both;
-    transform-origin: center center;
+    animation: heroZoom 16s ease-out both;
+    transform-origin: center 30%;
   }
   @keyframes heroZoom {
-    from { transform: scale(1.12); }
+    from { transform: scale(1.18); }
     to   { transform: scale(1.0); }
   }
 

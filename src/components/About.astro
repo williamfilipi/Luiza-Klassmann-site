@@ -30,30 +30,36 @@
         <p>
           Além de seus atendimentos clínicos, Luiza atua como <strong class="text-brand-ink font-semibold">mentora de profissionais da área</strong>, capacitando novos talentos através de seus cursos presenciais e mentorias VIP, onde compartilha sua metodologia exclusiva de Liberação Miofascial.
         </p>
-        <div class="grid grid-cols-2 gap-10 pt-8">
-          <div class="space-y-3">
+        <div class="grid grid-cols-2 gap-6 pt-8">
+          <!-- Autoridade -->
+          <div class="about-feat-card rounded-2xl p-5 border border-brand-terracotta/10 bg-brand-terracotta/5 space-y-3">
             <div class="w-10 h-10 bg-brand-terracotta/10 rounded-xl flex items-center justify-center text-brand-terracotta">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
             </div>
             <h4 class="font-bold text-xs uppercase tracking-widest">Autoridade</h4>
             <p class="text-sm text-brand-ink/50">Referência no ensino de terapias manuais.</p>
           </div>
-          <div class="space-y-3">
+
+          <!-- Mentora -->
+          <div class="about-feat-card rounded-2xl p-5 border border-brand-sage/10 bg-brand-sage/5 space-y-3">
             <div class="w-10 h-10 bg-brand-sage/10 rounded-xl flex items-center justify-center text-brand-sage">
-              <!-- Mentor/star icon -->
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
             </div>
             <h4 class="font-bold text-xs uppercase tracking-widest">Mentora</h4>
             <p class="text-sm text-brand-ink/50">Formando profissionais de excelência.</p>
           </div>
-          <div class="space-y-3">
+
+          <!-- Performance -->
+          <div class="about-feat-card rounded-2xl p-5 border border-brand-gold/10 bg-brand-gold/5 space-y-3">
             <div class="w-10 h-10 bg-brand-gold/10 rounded-xl flex items-center justify-center text-brand-gold">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             </div>
             <h4 class="font-bold text-xs uppercase tracking-widest">Performance</h4>
             <p class="text-sm text-brand-ink/50">Foco em resultados reais e duradouros.</p>
           </div>
-          <div class="space-y-3">
+
+          <!-- Cuidado -->
+          <div class="about-feat-card rounded-2xl p-5 border border-brand-terracotta/10 bg-brand-terracotta/5 space-y-3">
             <div class="w-10 h-10 bg-brand-terracotta/10 rounded-xl flex items-center justify-center text-brand-terracotta">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
             </div>
@@ -76,7 +82,20 @@
     opacity: 1;
     transform: translateY(0);
   }
-</style>
+  .about-feat-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+    cursor: default;
+  }
+  .about-feat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+    border-color: rgba(193,122,98,0.3);
+    background-color: rgba(193,122,98,0.1);
+  }
+  .about-feat-card:hover .w-10 {
+    transform: scale(1.15);
+    transition: transform 0.3s ease;
+  }</style>
 <script>
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {

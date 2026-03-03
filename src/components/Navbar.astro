@@ -1,7 +1,7 @@
 ---
 // Navbar component - uses inline script for mobile menu toggle
 ---
-<nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6">
+<nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6 translate-y-0">
   <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
     <!-- Logo -->
     <a href="#inicio" class="text-2xl font-serif font-bold tracking-tighter group">
@@ -74,16 +74,31 @@
   const iconClose = document.getElementById('icon-close');
   const mobileLinks = document.querySelectorAll('.mobile-link');
 
-  // Scroll effect
+  // Scroll hide/show + background effect
+  let lastY = window.scrollY;
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navbar?.classList.add('bg-white/80', 'backdrop-blur-xl', 'py-3', 'shadow-lg');
+    const currentY = window.scrollY;
+    const scrollingDown = currentY > lastY;
+
+    if (currentY > 50) {
+      navbar?.classList.add('bg-white/90', 'backdrop-blur-xl', 'py-3', 'shadow-lg');
       navbar?.classList.remove('py-6');
     } else {
-      navbar?.classList.remove('bg-white/80', 'backdrop-blur-xl', 'py-3', 'shadow-lg');
+      navbar?.classList.remove('bg-white/90', 'backdrop-blur-xl', 'py-3', 'shadow-lg');
       navbar?.classList.add('py-6');
     }
-  });
+
+    // Hide on scroll down, reveal on scroll up
+    if (scrollingDown && currentY > 120) {
+      navbar?.classList.add('-translate-y-full');
+      navbar?.classList.remove('translate-y-0');
+    } else {
+      navbar?.classList.remove('-translate-y-full');
+      navbar?.classList.add('translate-y-0');
+    }
+
+    lastY = currentY;
+  }, { passive: true });
 
   // Mobile toggle
   btn?.addEventListener('click', () => {
