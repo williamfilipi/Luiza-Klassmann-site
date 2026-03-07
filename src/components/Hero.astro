@@ -5,11 +5,14 @@
   <!-- Background Image with subtle zoom animation -->
   <div class="absolute inset-0 z-0 overflow-hidden">
     <img
-      src="/header.JPG"
+      src="/header.webp"
       alt="Luiza Klassmann Massoterapia - Porto Alegre"
-      class="w-full h-full object-cover hero-bg-zoom" style="object-position: center 30%"
-      referrerpolicy="no-referrer"
-      loading="eager"
+      class="w-full h-full object-cover hero-bg-zoom"
+      style="object-position: center 30%"
+      fetchpriority="high"
+      decoding="async"
+      width="1920"
+      height="1080"
     />
     <div class="absolute inset-0 bg-black/35"></div>
   </div>
@@ -61,6 +64,8 @@
   .hero-bg-zoom {
     animation: heroZoom 16s ease-out both;
     transform-origin: center 30%;
+    will-change: transform;
+    contain: layout;
   }
   @keyframes heroZoom {
     from { transform: scale(1.18); }

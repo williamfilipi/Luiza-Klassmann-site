@@ -1,23 +1,23 @@
 ---
 // Courses section
 const courseImages = [
-  { src: "/curso1.jpg", alt: "Formação em Massoterapia - aula prática", pos: "center" },
-  { src: "/curso3.jpg", alt: "Curso presencial de massoterapia", pos: "center" },
-  { src: "/curso4.jpg", alt: "Turma de formação VIP", pos: "center" },
-  { src: "/curso5.jpg", alt: "Técnicas avançadas de massoterapia", pos: "center" },
-  { src: "/curso7.jpg", alt: "Aula prática com tutoria personalizada", pos: "center" },
+  { src: "/curso1.webp", alt: "Formação em Massoterapia - aula prática", pos: "center" },
+  { src: "/curso3.webp", alt: "Curso presencial de massoterapia", pos: "center 30%" },
+  { src: "/curso4.webp", alt: "Turma de formação VIP", pos: "center 30%" },
+  { src: "/curso5.webp", alt: "Técnicas avançadas de massoterapia", pos: "center 30%" },
+  { src: "/curso7.webp", alt: "Aula prática com tutoria personalizada", pos: "center" },
 ];
 ---
-<section id="cursos" class="py-20 bg-brand-ink text-white relative overflow-hidden">
+<section id="cursos" class="py-12 md:py-20 bg-brand-ink text-white relative overflow-hidden">
   <!-- Background blobs -->
-  <div class="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
-    <div class="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-brand-gold rounded-full blur-[150px]"></div>
-    <div class="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-brand-terracotta rounded-full blur-[150px]"></div>
+  <div class="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none" aria-hidden="true">
+    <div class="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-brand-gold rounded-full blur-[80px] will-change-transform"></div>
+    <div class="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-brand-terracotta rounded-full blur-[80px] will-change-transform"></div>
   </div>
 
   <div class="max-w-7xl mx-auto px-6 relative z-10">
     <!-- Header -->
-    <div class="courses-reveal text-center mb-16">
+    <div class="courses-reveal text-center mb-10 md:mb-16">
       <span class="text-brand-gold text-[10px] font-bold uppercase tracking-[0.4em] mb-4 block">
         Formação Profissional
       </span>
@@ -30,7 +30,7 @@ const courseImages = [
     </div>
 
     <!-- Features row -->
-    <div class="courses-reveal grid sm:grid-cols-2 md:grid-cols-4 gap-6 mb-16 max-w-3xl mx-auto">
+    <div class="courses-reveal grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-3xl mx-auto">
       {[
         { label: "Metodologia Prática", icon: "check" },
         { label: "Certificação VIP", icon: "award" },
@@ -62,6 +62,9 @@ const courseImages = [
             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             style={`aspect-ratio: ${i === 0 ? "1/1" : "4/3"}; object-position: ${img.pos}`}
             loading="lazy"
+            decoding="async"
+            width={i === 0 ? 600 : 400}
+            height={i === 0 ? 600 : 300}
           />
         </div>
       ))}
