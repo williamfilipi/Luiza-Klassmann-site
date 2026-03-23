@@ -3,197 +3,284 @@ const services = [
   {
     title: "Liberação Miofascial",
     image: "/liberacaoMiofascial.avif",
-    description: "Técnica que atua nas fáscias musculares para restaurar mobilidade, aliviar tensões profundas e eliminar restrições de movimento.",
+    description:
+      "Técnica que atua nas fáscias musculares para restaurar mobilidade, aliviar tensões profundas e eliminar restrições de movimento.",
     tag: "Terapia Manual",
-    imgPosition: "top"
+    imgPosition: "top",
   },
   {
     title: "Drenagem Linfática Manual",
     image: "/drenagemLinfatica.avif",
-    description: "Estimula o sistema linfático para reduzir edemas, eliminar toxinas e melhorar a circulação em todo o organismo.",
+    description:
+      "Estimula o sistema linfático para reduzir edemas, eliminar toxinas e melhorar a circulação em todo o organismo.",
     tag: "Bem-estar",
-    imgPosition: "bottom"
+    imgPosition: "bottom",
   },
   {
     title: "Drenagem Pós-operatório",
     image: "/drenagemPosOperatorio.avif",
-    description: "Protocolo especializado para acelerar a recuperação após cirurgias, reduzindo inchaço e auxiliando na cicatrização.",
+    description:
+      "Protocolo especializado para acelerar a recuperação após cirurgias, reduzindo inchaço e auxiliando na cicatrização.",
     tag: "Recuperação",
-    imgPosition: "top"
+    imgPosition: "top",
   },
   {
     title: "Massagem Relaxante",
     image: "/massagemRelaxante.avif",
-    description: "Promove relaxamento profundo, alivia o estresse e restabelece o equilíbrio físico e mental com técnicas suaves e fluidas.",
+    description:
+      "Promove relaxamento profundo, alivia o estresse e restabelece o equilíbrio físico e mental com técnicas suaves e fluidas.",
     tag: "Massoterapia",
-    imgPosition: "top"
+    imgPosition: "top",
   },
   {
     title: "Massagem Terapêutica",
-    image: "https://biocap.com.br/wp-content/uploads/2023/11/foto_blog_Novembro_1024x641_01.png",
-    description: "Foco no alívio de dores musculares e articulares, utilizando técnicas específicas para tratar tensões e pontos de tensão.",
+    image:
+      "https://biocap.com.br/wp-content/uploads/2023/11/foto_blog_Novembro_1024x641_01.png",
+    description:
+      "Foco no alívio de dores musculares e articulares, utilizando técnicas específicas para tratar tensões e pontos de tensão.",
     tag: "Massoterapia",
-    imgPosition: "top"
+    imgPosition: "top",
   },
   {
     title: "Massagem Detox",
     image: "/massagemDetox.avif",
-    description: "Estimula a eliminação de toxinas, melhora a circulação e proporciona sensação de leveza e renovação para o corpo.",
+    description:
+      "Estimula a eliminação de toxinas, melhora a circulação e proporciona sensação de leveza e renovação para o corpo.",
     tag: "Massoterapia",
-    imgPosition: "bottom"
+    imgPosition: "bottom",
   },
   {
     title: "Auriculoterapia",
     image: "/auriculoterapia.avif",
-    description: "Técnica baseada em pontos específicos da orelha para equilibrar o organismo, aliviar dores e reduzir o estresse.",
+    description:
+      "Técnica baseada em pontos específicos da orelha para equilibrar o organismo, aliviar dores e reduzir o estresse.",
     tag: "Terapia Integrativa",
-    imgPosition: "top"
+    imgPosition: "top",
   },
   {
     title: "Diagnóstico Postural",
     image: "/diagnosticoPostural.avif",
-    description: "Avaliação completa da postura para identificar desequilíbrios e traçar um plano de intervenção personalizado.",
+    description:
+      "Avaliação completa da postura para identificar desequilíbrios e traçar um plano de intervenção personalizado.",
     tag: "Avaliação",
-    imgPosition: "top"
+    imgPosition: "top",
   },
   {
     title: "Recovery",
     image: "/recovery.avif",
-    description: "Protocolo de recuperação ativa para atletas e praticantes de atividade física, visando regeneração muscular e performance.",
+    description:
+      "Protocolo de recuperação ativa para atletas e praticantes de atividade física, visando regeneração muscular e performance.",
     tag: "Performance",
-    imgPosition: "top"
+    imgPosition: "top",
   },
   {
     title: "Exercícios Terapêuticos",
     image: "/exerciciosTerapeutico.avif",
-    description: "Prescrição e acompanhamento de exercícios para melhora da dor, reorganização postural e qualidade de vida.",
+    description:
+      "Prescrição e acompanhamento de exercícios para melhora da dor, reorganização postural e qualidade de vida.",
     tag: "Saúde & Movimento",
-    imgPosition: "bottom"
-  }
+    imgPosition: "bottom",
+  },
 ];
 ---
+
 <section id="servicos" class="py-12 md:py-20 bg-[#FDFBF7]">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-8 md:mb-14">
-      <span class="text-brand-terracotta text-[10px] font-bold uppercase tracking-[0.3em] mb-4 block">
+      <span
+        class="text-brand-terracotta text-[10px] font-bold uppercase tracking-[0.3em] mb-4 block"
+      >
         Nossas Especialidades
       </span>
       <h2 class="text-5xl md:text-6xl mb-6">
-        Nossas <span class="text-brand-sage italic font-light">Especialidades</span>
+        Nossas <span class="text-brand-sage italic font-light"
+          >Especialidades</span
+        >
       </h2>
       <p class="text-brand-ink/50 max-w-2xl mx-auto font-light text-lg">
-        Da massoterapia ao diagnóstico postural — tratamentos personalizados para corpo, recuperação e bem-estar.
+        Da massoterapia ao diagnóstico postural — tratamentos personalizados
+        para corpo, recuperação e bem-estar.
       </p>
     </div>
 
     <!-- ── DESKTOP: static grid 5×2 ── -->
     <div class="hidden md:grid grid-cols-5 gap-5">
-      {services.map((service, i) => (
-        <div class="svc-card group bg-white rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-brand-gold/5 flex flex-col" style={`--delay: ${i * 80}ms`}>
-          <div class="h-56 overflow-hidden relative flex-shrink-0">
-            <img src={service.image} alt={service.title} class={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${service.imgPosition === 'bottom' ? 'object-bottom' : 'object-top'}`} referrerpolicy="no-referrer" loading="lazy" decoding="async" width="300" height="224" />
+      {
+        services.map((service, i) => (
+          <div
+            class="svc-card group bg-brand-bg rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-brand-gold/5 flex flex-col"
+            style={`--delay: ${i * 80}ms`}
+          >
+            <div class="h-56 overflow-hidden relative flex-shrink-0">
+              <img
+                src={service.image}
+                alt={service.title}
+                class={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${service.imgPosition === "bottom" ? "object-bottom" : "object-top"}`}
+                referrerpolicy="no-referrer"
+                loading="lazy"
+                decoding="async"
+                width="300"
+                height="224"
+              />
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="text-xl mb-2 group-hover:text-brand-terracotta transition-colors">
+                {service.title}
+              </h3>
+              <p class="text-brand-ink/50 text-sm leading-relaxed mb-5 font-light flex-1">
+                {service.description}
+              </p>
+              <a
+                href="#"
+                data-service={service.title}
+                class="whatsapp-service-btn inline-flex items-center justify-center w-full py-3 bg-brand-bg border-2 border-brand-terracotta text-brand-terracotta rounded-2xl text-[10px] font-bold uppercase tracking-widest hover:bg-brand-terracotta/10 transition-all mt-auto"
+                aria-label={`Agendar ${service.title}`}
+              >
+                Agendar
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="ml-1"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </a>
+            </div>
           </div>
-          <div class="p-6 flex flex-col flex-1">
-            <h3 class="text-xl mb-2 group-hover:text-brand-terracotta transition-colors">{service.title}</h3>
-            <p class="text-brand-ink/50 text-sm leading-relaxed mb-5 font-light flex-1">{service.description}</p>
-            <a href="#" data-service={service.title} class="whatsapp-service-btn inline-flex items-center justify-center w-full py-3 bg-white border-2 border-brand-terracotta text-brand-terracotta rounded-2xl text-[10px] font-bold uppercase tracking-widest hover:bg-brand-terracotta/10 transition-all mt-auto" aria-label={`Agendar ${service.title}`}>
-              Agendar
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="m9 18 6-6-6-6"/></svg>
-            </a>
-          </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
 
-    <!-- ── MOBILE: carousel 1 (serviços 1–3) ── -->
+    <!-- ── MOBILE: carousel 1 (serviços 1–5) ── -->
     <div class="md:hidden space-y-10">
       <div class="svc-carousel" data-mobile-carousel="1">
         <div class="svc-track overflow-hidden">
-          <div class="svc-slides flex gap-6 transition-transform duration-500 ease-in-out">
-            {services.slice(0, 3).map((service) => (
-              <div class="svc-slide flex-none group bg-white rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-brand-gold/5">
-                <div class="h-56 overflow-hidden relative">
-                  <img src={service.image} alt={service.title} class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="224" />
+          <div
+            class="svc-slides flex gap-6 transition-transform duration-500 ease-in-out"
+          >
+            {
+              services.slice(0, 5).map((service) => (
+                <div class="svc-slide flex-none group bg-brand-bg rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-brand-gold/5">
+                  <div class="h-56 overflow-hidden relative">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      class="w-full h-full object-cover object-bottom transition-transform duration-700 group-hover:scale-110"
+                      referrerpolicy="no-referrer"
+                      loading="lazy"
+                      decoding="async"
+                      width="400"
+                      height="224"
+                    />
+                  </div>
+                  <div class="p-6">
+                    <h3 class="text-xl mb-2 group-hover:text-brand-terracotta transition-colors">
+                      {service.title}
+                    </h3>
+                    <p class="text-brand-ink/50 text-sm leading-relaxed mb-5 font-light">
+                      {service.description}
+                    </p>
+                    <a
+                      href="#"
+                      data-service={service.title}
+                      class="whatsapp-service-btn inline-flex items-center justify-center w-full py-3 bg-brand-bg border-2 border-brand-terracotta text-brand-terracotta rounded-2xl text-[10px] font-bold uppercase tracking-widest hover:bg-brand-terracotta/10 transition-all"
+                      aria-label={`Agendar ${service.title}`}
+                    >
+                      Agendar
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="ml-1"
+                      >
+                        <path d="m9 18 6-6-6-6" />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
-                <div class="p-6">
-                  <h3 class="text-xl mb-2 group-hover:text-brand-terracotta transition-colors">{service.title}</h3>
-                  <p class="text-brand-ink/50 text-sm leading-relaxed mb-5 font-light">{service.description}</p>
-                  <a href="#" data-service={service.title} class="whatsapp-service-btn inline-flex items-center justify-center w-full py-3 bg-white border-2 border-brand-terracotta text-brand-terracotta rounded-2xl text-[10px] font-bold uppercase tracking-widest hover:bg-brand-terracotta/10 transition-all" aria-label={`Agendar ${service.title}`}>
-                    Agendar
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="m9 18 6-6-6-6"/></svg>
-                  </a>
-                </div>
-              </div>
-            ))}
+              ))
+            }
           </div>
         </div>
-        <button class="svc-prev absolute top-1/2 -translate-y-1/2 -left-4 z-10 w-10 h-10 rounded-full bg-white border border-brand-gold/20 shadow-md flex items-center justify-center text-brand-ink hover:bg-brand-gold hover:text-white transition-all" aria-label="Anterior">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-        </button>
-        <button class="svc-next absolute top-1/2 -translate-y-1/2 -right-4 z-10 w-10 h-10 rounded-full bg-white border border-brand-gold/20 shadow-md flex items-center justify-center text-brand-ink hover:bg-brand-gold hover:text-white transition-all" aria-label="Próximo">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-        </button>
-        <div class="svc-dots flex justify-center gap-2 mt-6"></div>
+        <div class="svc-dots flex justify-center gap-2 mt-4"></div>
+        <p class="text-center text-brand-ink/40 text-xs mt-2 tracking-wide">
+          Arraste para o lado →
+        </p>
       </div>
 
-      <!-- ── MOBILE: carousel 2 (serviços 4–6) ── -->
+      <!-- ── MOBILE: carousel 2 (serviços 6–10) ── -->
       <div class="svc-carousel" data-mobile-carousel="2">
         <div class="svc-track overflow-hidden">
-          <div class="svc-slides flex gap-6 transition-transform duration-500 ease-in-out">
-            {services.slice(3, 6).map((service) => (
-              <div class="svc-slide flex-none group bg-white rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-brand-gold/5">
-                <div class="h-56 overflow-hidden relative">
-                  <img src={service.image} alt={service.title} class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="224" />
+          <div
+            class="svc-slides flex gap-6 transition-transform duration-500 ease-in-out"
+          >
+            {
+              services.slice(5).map((service) => (
+                <div class="svc-slide flex-none group bg-brand-bg rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-brand-gold/5">
+                  <div class="h-56 overflow-hidden relative">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      class="w-full h-full object-cover object-bottom transition-transform duration-700 group-hover:scale-110"
+                      referrerpolicy="no-referrer"
+                      loading="lazy"
+                      decoding="async"
+                      width="400"
+                      height="224"
+                    />
+                  </div>
+                  <div class="p-6">
+                    <h3 class="text-xl mb-2 group-hover:text-brand-terracotta transition-colors">
+                      {service.title}
+                    </h3>
+                    <p class="text-brand-ink/50 text-sm leading-relaxed mb-5 font-light">
+                      {service.description}
+                    </p>
+                    <a
+                      href="#"
+                      data-service={service.title}
+                      class="whatsapp-service-btn inline-flex items-center justify-center w-full py-3 bg-brand-bg border-2 border-brand-terracotta text-brand-terracotta rounded-2xl text-[10px] font-bold uppercase tracking-widest hover:bg-brand-terracotta/10 transition-all"
+                      aria-label={`Agendar ${service.title}`}
+                    >
+                      Agendar
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="ml-1"
+                      >
+                        <path d="m9 18 6-6-6-6" />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
-                <div class="p-6">
-                  <h3 class="text-xl mb-2 group-hover:text-brand-terracotta transition-colors">{service.title}</h3>
-                  <p class="text-brand-ink/50 text-sm leading-relaxed mb-5 font-light">{service.description}</p>
-                  <a href="#" data-service={service.title} class="whatsapp-service-btn inline-flex items-center justify-center w-full py-3 bg-white border-2 border-brand-terracotta text-brand-terracotta rounded-2xl text-[10px] font-bold uppercase tracking-widest hover:bg-brand-terracotta/10 transition-all" aria-label={`Agendar ${service.title}`}>
-                    Agendar
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="m9 18 6-6-6-6"/></svg>
-                  </a>
-                </div>
-              </div>
-            ))}
+              ))
+            }
           </div>
         </div>
-        <button class="svc-prev absolute top-1/2 -translate-y-1/2 -left-4 z-10 w-10 h-10 rounded-full bg-white border border-brand-gold/20 shadow-md flex items-center justify-center text-brand-ink hover:bg-brand-gold hover:text-white transition-all" aria-label="Anterior">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-        </button>
-        <button class="svc-next absolute top-1/2 -translate-y-1/2 -right-4 z-10 w-10 h-10 rounded-full bg-white border border-brand-gold/20 shadow-md flex items-center justify-center text-brand-ink hover:bg-brand-gold hover:text-white transition-all" aria-label="Próximo">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-        </button>
-        <div class="svc-dots flex justify-center gap-2 mt-6"></div>
-      </div>
-
-      <!-- ── MOBILE: carousel 3 (serviços 7–9) ── -->
-      <div class="svc-carousel" data-mobile-carousel="3">
-        <div class="svc-track overflow-hidden">
-          <div class="svc-slides flex gap-6 transition-transform duration-500 ease-in-out">
-            {services.slice(6).map((service) => (
-              <div class="svc-slide flex-none group bg-white rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-brand-gold/5">
-                <div class="h-56 overflow-hidden relative">
-                  <img src={service.image} alt={service.title} class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="224" />
-                </div>
-                <div class="p-6">
-                  <h3 class="text-xl mb-2 group-hover:text-brand-terracotta transition-colors">{service.title}</h3>
-                  <p class="text-brand-ink/50 text-sm leading-relaxed mb-5 font-light">{service.description}</p>
-                  <a href="#" data-service={service.title} class="whatsapp-service-btn inline-flex items-center justify-center w-full py-3 bg-white border-2 border-brand-terracotta text-brand-terracotta rounded-2xl text-[10px] font-bold uppercase tracking-widest hover:bg-brand-terracotta/10 transition-all" aria-label={`Agendar ${service.title}`}>
-                    Agendar
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="m9 18 6-6-6-6"/></svg>
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <button class="svc-prev absolute top-1/2 -translate-y-1/2 -left-4 z-10 w-10 h-10 rounded-full bg-white border border-brand-gold/20 shadow-md flex items-center justify-center text-brand-ink hover:bg-brand-gold hover:text-white transition-all" aria-label="Anterior">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-        </button>
-        <button class="svc-next absolute top-1/2 -translate-y-1/2 -right-4 z-10 w-10 h-10 rounded-full bg-white border border-brand-gold/20 shadow-md flex items-center justify-center text-brand-ink hover:bg-brand-gold hover:text-white transition-all" aria-label="Próximo">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-        </button>
-        <div class="svc-dots flex justify-center gap-2 mt-6"></div>
+        <div class="svc-dots flex justify-center gap-2 mt-4"></div>
+        <p class="text-center text-brand-ink/40 text-xs mt-2 tracking-wide">
+          Arraste para o lado →
+        </p>
       </div>
     </div>
   </div>
@@ -217,7 +304,10 @@ const services = [
   }
   /* Tilt resets smoothly on leave */
   .svc-card.tilt-reset {
-    transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.6s ease var(--delay,0ms) !important;
+    transition:
+      transform 0.5s ease,
+      box-shadow 0.5s ease,
+      opacity 0.6s ease var(--delay, 0ms) !important;
   }
 
   .svc-carousel {
@@ -229,12 +319,10 @@ const services = [
   const GAP = 24;
 
   function initCarousel(carousel: HTMLElement) {
-    const track    = carousel.querySelector<HTMLElement>('.svc-track')!;
-    const slidesEl = carousel.querySelector<HTMLElement>('.svc-slides')!;
-    const slides   = carousel.querySelectorAll<HTMLElement>('.svc-slide');
-    const dotsEl   = carousel.querySelector<HTMLElement>('.svc-dots')!;
-    const prevBtn  = carousel.querySelector<HTMLButtonElement>('.svc-prev')!;
-    const nextBtn  = carousel.querySelector<HTMLButtonElement>('.svc-next')!;
+    const track = carousel.querySelector<HTMLElement>(".svc-track")!;
+    const slidesEl = carousel.querySelector<HTMLElement>(".svc-slides")!;
+    const slides = carousel.querySelectorAll<HTMLElement>(".svc-slide");
+    const dotsEl = carousel.querySelector<HTMLElement>(".svc-dots")!;
 
     const total = slides.length;
     let cur = 0;
@@ -245,23 +333,25 @@ const services = [
 
     function setSizes() {
       const w = sw();
-      slides.forEach(s => { s.style.width = `${w}px`; });
+      slides.forEach((s) => {
+        s.style.width = `${w}px`;
+      });
     }
 
     function buildDots() {
-      dotsEl.innerHTML = '';
+      dotsEl.innerHTML = "";
       for (let i = 0; i < total; i++) {
-        const d = document.createElement('button');
-        d.setAttribute('aria-label', `Posição ${i + 1}`);
-        d.addEventListener('click', () => goTo(i));
+        const d = document.createElement("button");
+        d.setAttribute("aria-label", `Posição ${i + 1}`);
+        d.addEventListener("click", () => goTo(i));
         dotsEl.appendChild(d);
       }
     }
 
     function updateDots() {
-      dotsEl.querySelectorAll('button').forEach((d, i) => {
+      dotsEl.querySelectorAll("button").forEach((d, i) => {
         const active = i === cur;
-        d.className = `h-2 rounded-full transition-all duration-300 ${active ? 'bg-brand-gold w-5' : 'bg-brand-gold/30 w-2'}`;
+        d.className = `h-2 rounded-full transition-all duration-300 ${active ? "bg-brand-gold w-5" : "bg-brand-gold/30 w-2"}`;
       });
     }
 
@@ -278,14 +368,18 @@ const services = [
       goTo(0);
     }
 
-    prevBtn?.addEventListener('click', () => goTo(cur - 1));
-    nextBtn?.addEventListener('click', () => goTo(cur + 1));
-    window.addEventListener('resize', init);
+    window.addEventListener("resize", init);
 
     // Swipe
     let startX = 0;
-    track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-    track.addEventListener('touchend', e => {
+    track.addEventListener(
+      "touchstart",
+      (e) => {
+        startX = e.touches[0].clientX;
+      },
+      { passive: true },
+    );
+    track.addEventListener("touchend", (e) => {
       const diff = startX - e.changedTouches[0].clientX;
       if (Math.abs(diff) > 40) goTo(cur + (diff > 0 ? 1 : -1));
     });
@@ -293,48 +387,57 @@ const services = [
     init();
   }
 
-  document.querySelectorAll<HTMLElement>('.svc-carousel').forEach(initCarousel);
+  document.querySelectorAll<HTMLElement>(".svc-carousel").forEach(initCarousel);
 
   // Fade-up animation for desktop grid cards
-  const svcCards = document.querySelectorAll<HTMLElement>('.svc-card');
-  const cardObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        cardObserver.unobserve(entry.target); // animate once
-      }
-    });
-  }, { threshold: 0.12 });
-  svcCards.forEach(card => cardObserver.observe(card));
+  const svcCards = document.querySelectorAll<HTMLElement>(".svc-card");
+  const cardObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          cardObserver.unobserve(entry.target); // animate once
+        }
+      });
+    },
+    { threshold: 0.12 },
+  );
+  svcCards.forEach((card) => cardObserver.observe(card));
 
   // WhatsApp links
-  const PHONE = '5551993975325';
-  document.querySelectorAll<HTMLAnchorElement>('.whatsapp-service-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const service = btn.getAttribute('data-service') ?? '';
-      const message = encodeURIComponent(`Olá! Quero agendar: ${service}`);
-      window.open(`https://wa.me/${PHONE}?text=${message}`, '_blank', 'noopener,noreferrer');
+  const PHONE = "5551993975325";
+  document
+    .querySelectorAll<HTMLAnchorElement>(".whatsapp-service-btn")
+    .forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const service = btn.getAttribute("data-service") ?? "";
+        const message = encodeURIComponent(`Olá! Quero agendar: ${service}`);
+        window.open(
+          `https://wa.me/${PHONE}?text=${message}`,
+          "_blank",
+          "noopener,noreferrer",
+        );
+      });
     });
-  });
 
   // 3D tilt effect on desktop cards
   const MAX_TILT = 8; // degrees
-  document.querySelectorAll<HTMLElement>('.svc-card').forEach(card => {
-    card.addEventListener('mousemove', (e: MouseEvent) => {
+  document.querySelectorAll<HTMLElement>(".svc-card").forEach((card) => {
+    card.addEventListener("mousemove", (e: MouseEvent) => {
       const rect = card.getBoundingClientRect();
-      const cx = rect.left + rect.width  / 2;
-      const cy = rect.top  + rect.height / 2;
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
       const rx = ((e.clientY - cy) / (rect.height / 2)) * -MAX_TILT;
-      const ry = ((e.clientX - cx) / (rect.width  / 2)) *  MAX_TILT;
-      card.classList.remove('tilt-reset');
+      const ry = ((e.clientX - cx) / (rect.width / 2)) * MAX_TILT;
+      card.classList.remove("tilt-reset");
       card.style.transform = `translateY(0) perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) scale(1.02)`;
       card.style.boxShadow = `0 24px 60px rgba(0,0,0,0.14)`;
     });
-    card.addEventListener('mouseleave', () => {
-      card.classList.add('tilt-reset');
+    card.addEventListener("mouseleave", () => {
+      card.classList.add("tilt-reset");
       card.style.transform = `translateY(0) perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)`;
-      card.style.boxShadow = '';
+      card.style.boxShadow = "";
     });
   });
 </script>

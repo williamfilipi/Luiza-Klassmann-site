@@ -1,22 +1,54 @@
 ---
 // Courses section
 const courseImages = [
-  { src: "/curso1.avif", alt: "Formação em Massoterapia - aula prática", pos: "center" },
-  { src: "/curso3.avif", alt: "Curso presencial de massoterapia", pos: "center 30%" },
+  {
+    src: "/curso1.avif",
+    alt: "Formação em Massoterapia - aula prática",
+    pos: "center",
+  },
+  {
+    src: "/curso3.avif",
+    alt: "Curso presencial de massoterapia",
+    pos: "center 30%",
+  },
   { src: "/curso4.avif", alt: "Turma de formação VIP", pos: "center 30%" },
-  { src: "/curso5.avif", alt: "Técnicas avançadas de massoterapia", pos: "center 30%" },
-  { src: "/curso7.avif", alt: "Aula prática com tutoria personalizada", pos: "center" },
+  {
+    src: "/curso5.avif",
+    alt: "Técnicas avançadas de massoterapia",
+    pos: "center 30%",
+  },
+  {
+    src: "/curso7.avif",
+    alt: "Aula prática com tutoria personalizada",
+    pos: "center",
+  },
 ];
 ---
-<section id="cursos" class="py-12 md:py-20 bg-brand-ink text-white relative overflow-hidden">
+
+<section
+  id="cursos"
+  class="py-12 md:py-20 bg-brand-ink text-white relative overflow-hidden"
+>
   <!-- Background blobs — animated/living -->
-  <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+  <div
+    class="absolute inset-0 pointer-events-none overflow-hidden"
+    aria-hidden="true"
+  >
     <!-- Main gold blob — slow drift top-left -->
-    <div class="blob-gold absolute top-[-15%] left-[-8%] w-[65%] h-[65%] rounded-full blur-[90px] opacity-25"></div>
+    <div
+      class="blob-gold absolute top-[-15%] left-[-8%] w-[65%] h-[65%] rounded-full blur-[90px] opacity-25"
+    >
+    </div>
     <!-- Secondary terracotta blob — slow drift bottom-right -->
-    <div class="blob-terracotta absolute bottom-[-15%] right-[-8%] w-[65%] h-[65%] rounded-full blur-[90px] opacity-20"></div>
+    <div
+      class="blob-terracotta absolute bottom-[-15%] right-[-8%] w-[65%] h-[65%] rounded-full blur-[90px] opacity-20"
+    >
+    </div>
     <!-- Accent gold blob — center, small pulse -->
-    <div class="blob-accent absolute top-[30%] left-[40%] w-[35%] h-[35%] rounded-full blur-[70px] opacity-15"></div>
+    <div
+      class="blob-accent absolute top-[30%] left-[40%] w-[35%] h-[35%] rounded-full blur-[70px] opacity-15"
+    >
+    </div>
     <!-- Shimmer streaks overlay -->
     <div class="blob-shimmer absolute inset-0 opacity-5"></div>
   </div>
@@ -24,56 +56,115 @@ const courseImages = [
   <div class="max-w-7xl mx-auto px-6 relative z-10">
     <!-- Header -->
     <div class="courses-reveal text-center mb-10 md:mb-16">
-      <span class="text-brand-gold text-[10px] font-bold uppercase tracking-[0.4em] mb-4 block">
+      <span
+        class="text-brand-gold text-[10px] font-bold uppercase tracking-[0.4em] mb-4 block"
+      >
         Formação Profissional
       </span>
       <h2 class="text-5xl md:text-7xl mb-6 leading-[1.1]">
-        Capacite-se com quem é <span class="text-brand-gold italic font-light">referência</span> no mercado.
+        Capacite-se com quem é <span class="text-brand-gold italic font-light"
+          >referência</span
+        > no mercado.
       </h2>
-      <p class="text-white/60 text-xl max-w-3xl mx-auto leading-relaxed font-light">
-        O Curso de Liberação Miofascial (VIP e Presencial) foi desenvolvido para profissionais que desejam elevar o nível de seus atendimentos e dominar a técnica que mais cresce na massoterapia.
+      <p
+        class="text-white/60 text-xl max-w-5xl mx-auto leading-relaxed font-light"
+      >
+        Meus treinamentos foram desenvolvidos para profissionais que desejam
+        dominar a intersecção entre a terapia manual e o movimento consciente.
+        Aqui, você não aprende apenas manobras, mas sim o raciocínio clínico
+        necessário para entregar resultados que fidelizam e valorizam o seu
+        atendimento.<br />
+        Através de uma metodologia 100% prática e presencial,
+        compartilho anos de experiência em saúde e performance para que você
+        atue com total segurança e eleve seu posicionamento profissional.
+      </p>
+      <p
+        class="text-white/60 text-xl max-w-5xl mx-auto leading-relaxed font-light"
+      >
+        O Curso de Liberação Miofascial (VIP e Presencial) foi desenvolvido
+        para profissionais que desejam elevar o nível de seus atendimentos e
+        dominar a técnica que mais cresce na massoterapia.
+      </p>
       </p>
     </div>
 
     <!-- Features row -->
-    <div class="courses-reveal grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-3xl mx-auto">
-      {[
-        { label: "Metodologia Prática", icon: "check" },
-        { label: "Certificação VIP", icon: "award" },
-        { label: "Turmas Reduzidas", icon: "users" },
-        { label: "Suporte Vitalício", icon: "heart" },
-      ].map((item) => (
-        <div class="benefit-card flex flex-col items-center gap-3 px-6 py-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm cursor-default">
-          <svg class="text-brand-gold w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            {item.icon === "check" && <><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></>}
-            {item.icon === "award" && <><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></>}
-            {item.icon === "users" && <><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></>}
-            {item.icon === "heart" && <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>}
-          </svg>
-          <span class="text-sm font-medium uppercase tracking-widest text-white/80 text-center">{item.label}</span>
-        </div>
-      ))}
+    <div
+      class="courses-reveal grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-3xl mx-auto"
+    >
+      {
+        [
+          { label: "Metodologia Prática", icon: "check" },
+          { label: "Certificação VIP", icon: "award" },
+          { label: "Turmas Reduzidas", icon: "users" },
+          { label: "Suporte Vitalício", icon: "heart" },
+        ].map((item) => (
+          <div class="benefit-card flex flex-col items-center gap-3 px-6 py-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm cursor-default">
+            <svg
+              class="text-brand-gold w-6 h-6"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              {item.icon === "check" && (
+                <>
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <path d="m9 11 3 3L22 4" />
+                </>
+              )}
+              {item.icon === "award" && (
+                <>
+                  <circle cx="12" cy="8" r="6" />
+                  <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+                </>
+              )}
+              {item.icon === "users" && (
+                <>
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </>
+              )}
+              {item.icon === "heart" && (
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+              )}
+            </svg>
+            <span class="text-sm font-medium uppercase tracking-widest text-white/80 text-center">
+              {item.label}
+            </span>
+          </div>
+        ))
+      }
     </div>
 
     <!-- Photo gallery grid -->
-    <div class="courses-gallery grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-16">
-      {courseImages.map((img, i) => (
-        <div
-          class={`gallery-item overflow-hidden rounded-2xl group ${i === 0 ? "md:col-span-2 row-span-2" : ""}`}
-          style={`--delay: ${i * 80}ms`}
-        >
-          <img
-            src={img.src}
-            alt={img.alt}
-            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            style={`aspect-ratio: ${i === 0 ? "1/1" : "4/3"}; object-position: ${img.pos}`}
-            loading="lazy"
-            decoding="async"
-            width={i === 0 ? 600 : 400}
-            height={i === 0 ? 600 : 300}
-          />
-        </div>
-      ))}
+    <div
+      class="courses-gallery grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-16"
+    >
+      {
+        courseImages.map((img, i) => (
+          <div
+            class={`gallery-item overflow-hidden rounded-2xl group ${i === 0 ? "md:col-span-2 row-span-2" : ""}`}
+            style={`--delay: ${i * 80}ms`}
+          >
+            <img
+              src={img.src}
+              alt={img.alt}
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              style={`aspect-ratio: ${i === 0 ? "1/1" : "4/3"}; object-position: ${img.pos}`}
+              loading="lazy"
+              decoding="async"
+              width={i === 0 ? 600 : 400}
+              height={i === 0 ? 600 : 300}
+            />
+          </div>
+        ))
+      }
     </div>
 
     <!-- CTA -->
@@ -92,14 +183,22 @@ const courseImages = [
   .courses-reveal {
     opacity: 0;
     transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s ease;
   }
   .courses-reveal.visible {
     opacity: 1;
     transform: translateY(0);
   }
   .benefit-card {
-    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(138, 154, 121, 0.2);
+    transition:
+      transform 0.3s ease,
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      box-shadow 0.3s ease,
+      filter 0.3s ease;
   }
   .benefit-card:hover {
     transform: translateY(-4px) scale(1.04);
@@ -110,26 +209,39 @@ const courseImages = [
   .gallery-item {
     opacity: 0;
     transform: scale(0.95);
-    transition: opacity 0.6s ease var(--delay, 0ms), transform 0.6s ease var(--delay, 0ms), box-shadow 0.4s;
+    transition:
+      opacity 0.6s ease var(--delay, 0ms),
+      transform 0.6s ease var(--delay, 0ms),
+      box-shadow 0.4s;
   }
   .gallery-item.visible {
     opacity: 1;
     transform: scale(1);
   }
   .gallery-item:hover {
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   }
 </style>
 <script>
-  const reveals = document.querySelectorAll('.courses-reveal');
-  const revObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.15 });
-  reveals.forEach(e => revObs.observe(e));
+  const reveals = document.querySelectorAll(".courses-reveal");
+  const revObs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) e.target.classList.add("visible");
+      });
+    },
+    { threshold: 0.15 },
+  );
+  reveals.forEach((e) => revObs.observe(e));
 
-  const galleryItems = document.querySelectorAll('.gallery-item');
-  const galObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  galleryItems.forEach(e => galObs.observe(e));
+  const galleryItems = document.querySelectorAll(".gallery-item");
+  const galObs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) e.target.classList.add("visible");
+      });
+    },
+    { threshold: 0.1 },
+  );
+  galleryItems.forEach((e) => galObs.observe(e));
 </script>

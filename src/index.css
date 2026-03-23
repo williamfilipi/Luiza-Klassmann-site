@@ -5,11 +5,15 @@
   --font-serif: "Cormorant Garamond", serif;
   --font-sans: "Inter", sans-serif;
   
-  --color-brand-bg: #FEF9E5;
+  --color-brand-bg: #F6F1E9;
+  --color-brand-cream: #F8F4EC;
   --color-brand-terracotta: #C17A62;
+  --color-brand-sage: #8A9A79;
   --color-brand-olive: #707A5E;
+  --color-brand-bordeaux: #6B2332;
   --color-brand-gold: #C5A059;
   --color-brand-ink: #2D2A26;
+  --color-brand-soft: #EDE7DE;
 }
 
 @layer base {
@@ -25,5 +29,5 @@
 }
 
 .glass-card {
-  @apply bg-white/40 backdrop-blur-sm border border-white/20;
+  @apply bg-brand-bg/10 backdrop-blur-sm border border-brand-bg/10;
 }
