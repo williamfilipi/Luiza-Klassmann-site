@@ -3,6 +3,10 @@
 const results = [
   { src: "/resultado1.avif", alt: "Resultado antes e depois 1" },
   { src: "/resultado2.avif", alt: "Resultado antes e depois 2" },
+  { src: "/resultado3.jpg", alt: "Resultado antes e depois 3" },
+  { src: "/resultado4.jpg", alt: "Resultado antes e depois 4" },
+  { src: "/resultado5.jpg", alt: "Resultado antes e depois 5" },
+  { src: "/resultado 6.jpg", alt: "Resultado antes e depois 6" },
 ];
 ---
 <section id="resultados" class="py-12 md:py-20 bg-[#FDFBF7] overflow-hidden">
@@ -21,11 +25,11 @@ const results = [
     </div>
 
     <!-- Results grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
       {results.map((r, i) => (
         <div
           class="result-card group relative overflow-hidden rounded-3xl shadow-lg"
-          style={`--delay: ${i * 100}ms`}
+          style={`--delay: ${(i % 3) * 100}ms`}
         >
           <div class="w-full h-96 bg-[#f5f5f5] flex items-center justify-center">
             <img
