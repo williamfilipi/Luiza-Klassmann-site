@@ -1,134 +1,151 @@
 ---
-// Testimonials — 3-col desktop carousel, 1-col mobile
+// Testimonials — Continuous Marquee Carousel
 const testimonials = [
   { tag: "Competência", photo: "/feedback1.avif", alt: "Avaliação de cliente destacando a competência de Luiza Klassmann" },
   { tag: "Experiência Maravilhosa", photo: "/feedback2.avif", alt: "Avaliação de cliente descrevendo experiência maravilhosa no atendimento" },
   { tag: "Profissional Maravilhosa", photo: "/feedback3.avif", alt: "Avaliação elogiando Luiza Klassmann como profissional maravilhosa" },
   { tag: "Super Recomendo", photo: "/feedback4.avif", alt: "Avaliação de cliente recomendando fortemente os serviços de Luiza Klassmann" },
   { tag: "Resultados Incríveis", photo: "/feedback5.avif", alt: "Avaliação de cliente relatando resultados incríveis com os tratamentos" },
+  { tag: "Atenção Aos Detalhes", photo: "/feedback6.avif", alt: "Avaliação de cliente destacando a atenção aos detalhes" },
+  { tag: "Muito Satisfeita", photo: "/feedback7.avif", alt: "Avaliação de cliente muito satisfeita com os métodos" },
+  { tag: "Dedicação", photo: "/feedback8.avif", alt: "Avaliação de cliente sobre a dedicação no atendimento" },
 ];
+
+const duplicatedTestimonials = [...testimonials, ...testimonials];
 ---
 <section id="depoimentos" class="py-12 md:py-20 bg-white overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6">
+  <div class="max-w-7xl mx-auto px-6 mb-12">
     <!-- Header -->
-    <div class="text-center mb-12">
+    <div class="text-center">
       <span class="text-brand-terracotta text-[10px] font-bold uppercase tracking-[0.35em] mb-4 block">
         Depoimentos
       </span>
       <h2 class="text-5xl md:text-6xl mb-0">Quem passou por aqui</h2>
     </div>
+  </div>
 
-    <!-- Carousel wrapper -->
-    <div class="relative">
-      <div id="t-track" class="overflow-hidden">
-        <div id="t-slides" class="flex gap-6 transition-transform duration-500 ease-in-out">
-          {testimonials.map((t) => (
-            <div class="t-slide flex-none bg-[#FDFBF7] rounded-[28px] p-8 border border-brand-gold/10 shadow-sm hover:shadow-xl transition-shadow duration-500 flex flex-col gap-5">
-              <!-- Tag + quote icon -->
-              <div class="flex items-start justify-between">
-                <span class="text-[9px] font-bold uppercase tracking-[0.25em] text-brand-terracotta">{t.tag}</span>
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" class="text-brand-gold/25 shrink-0">
-                  <path d="M9.333 21.333C7.493 21.333 6 19.84 6 18V14.667C6 10.985 8.985 8 12.667 8h.666v2.667h-.666C10.493 10.667 8.667 12.493 8.667 14.667H12C13.474 14.667 14.667 15.859 14.667 17.333V18C14.667 19.84 13.173 21.333 11.333 21.333H9.333ZM22.667 21.333C20.827 21.333 19.333 19.84 19.333 18V14.667C19.333 10.985 22.319 8 26 8h.667v2.667H26C23.827 10.667 22 12.493 22 14.667H25.333C26.807 14.667 28 15.859 28 17.333V18C28 19.84 26.507 21.333 24.667 21.333H22.667Z" fill="currentColor"/>
-                </svg>
-              </div>
-              <!-- Photo -->
-              <div class="rounded-2xl overflow-hidden w-full bg-[#f0f0f0]" style="height: 340px;">
-                <img src={t.photo} alt={t.alt} class="w-full h-full object-contain" loading="lazy" decoding="async" />
-              </div>
-            </div>
-          ))}
+  <!-- Carousel wrapper -->
+  <div class="relative w-full overflow-hidden cursor-grab active:cursor-grabbing" id="t-container">
+    <div id="t-track" class="flex gap-4 md:gap-6 w-max will-change-transform pb-4 md:pb-8">
+      {duplicatedTestimonials.map((t) => (
+        <div class="t-slide flex-none bg-[#FDFBF7] rounded-[28px] p-6 md:p-8 border border-brand-gold/10 shadow-sm hover:shadow-xl transition-shadow duration-500 flex flex-col gap-5 w-[280px] md:w-[380px]">
+          <!-- Tag + quote icon -->
+          <div class="flex items-start justify-between">
+            <span class="text-[9px] font-bold uppercase tracking-[0.25em] text-brand-terracotta">{t.tag}</span>
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" class="text-brand-gold/25 shrink-0">
+              <path d="M9.333 21.333C7.493 21.333 6 19.84 6 18V14.667C6 10.985 8.985 8 12.667 8h.666v2.667h-.666C10.493 10.667 8.667 12.493 8.667 14.667H12C13.474 14.667 14.667 15.859 14.667 17.333V18C14.667 19.84 13.173 21.333 11.333 21.333H9.333ZM22.667 21.333C20.827 21.333 19.333 19.84 19.333 18V14.667C19.333 10.985 22.319 8 26 8h.667v2.667H26C23.827 10.667 22 12.493 22 14.667H25.333C26.807 14.667 28 15.859 28 17.333V18C28 19.84 26.507 21.333 24.667 21.333H22.667Z" fill="currentColor"/>
+            </svg>
+          </div>
+          <!-- Photo -->
+          <div class="rounded-2xl overflow-hidden w-full bg-[#f0f0f0]" style="height: 340px;">
+            <img src={t.photo} alt={t.alt} class="w-full h-full object-contain" loading="lazy" decoding="async" />
+          </div>
         </div>
-      </div>
-
-      <!-- Arrows -->
-      <button id="t-prev" aria-label="Anterior" class="absolute top-1/2 -translate-y-1/2 -left-4 md:-left-5 z-10 w-10 h-10 md:w-11 md:h-11 rounded-full bg-white border border-brand-gold/20 shadow-md flex items-center justify-center text-brand-ink hover:bg-brand-gold hover:text-white transition-all">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-      </button>
-      <button id="t-next" aria-label="Próximo" class="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-5 z-10 w-10 h-10 md:w-11 md:h-11 rounded-full bg-white border border-brand-gold/20 shadow-md flex items-center justify-center text-brand-ink hover:bg-brand-gold hover:text-white transition-all">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-      </button>
+      ))}
     </div>
-
-    <!-- Dots (computed by JS) -->
-    <div id="t-dots" class="flex justify-center gap-2 mt-8"></div>
   </div>
 </section>
 
 <script>
-  const GAP = 24; // gap-6 = 1.5rem = 24px
-  let visibleCount = window.innerWidth < 768 ? 1 : 3;
-  const total = 5;
+  function setupCarousel() {
+    const track = document.getElementById('t-track');
+    const container = document.getElementById('t-container');
+    if (!track || !container) return;
 
-  const slidesEl = document.getElementById('t-slides') as HTMLElement;
-  const dotsEl   = document.getElementById('t-dots')   as HTMLElement;
-  let current = 0;
+    let isHovering = false;
+    let isDragging = false;
+    let startX = 0;
+    let currentX = 0;
+    let offset = 0;
+    
+    // Configurable speeds
+    const NORMAL_SPEED = 1.0; 
+    const SLOW_SPEED = 0.3;
+    let currentSpeed = NORMAL_SPEED; 
+    
+    let rafId = 0;
 
-  // Build dots
-  function buildDots() {
-    const maxStep = total - visibleCount;
-    dotsEl.innerHTML = '';
-    for (let i = 0; i <= maxStep; i++) {
-      const d = document.createElement('button');
-      d.className = 'h-2 rounded-full bg-brand-gold/30 transition-all duration-300';
-      d.setAttribute('aria-label', `Posição ${i + 1}`);
-      d.addEventListener('click', () => goTo(i));
-      dotsEl.appendChild(d);
-    }
-  }
-
-  function slideWidth(): number {
-    const track = document.getElementById('t-track') as HTMLElement;
-    return (track.offsetWidth - (visibleCount - 1) * GAP) / visibleCount;
-  }
-
-  // Set each slide's width in px
-  function setSlideSizes() {
-    const w = slideWidth();
-    document.querySelectorAll<HTMLElement>('.t-slide').forEach(s => { s.style.width = `${w}px`; });
-  }
-
-  function updateDots() {
-    const maxStep = total - visibleCount;
-    dotsEl.querySelectorAll('button').forEach((d, i) => {
-      const active = i === current;
-      d.className = `h-2 rounded-full transition-all duration-300 ${active ? 'bg-brand-gold w-5' : 'bg-brand-gold/30 w-2'}`;
+    // Hover detection
+    container.addEventListener('mouseenter', () => isHovering = true);
+    container.addEventListener('mouseleave', () => {
+      isHovering = false;
+      isDragging = false;
     });
+
+    // Mouse drag
+    container.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      startX = e.pageX;
+      currentX = offset;
+    });
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX;
+      const walk = (startX - x) * 1.5;
+      offset = currentX + walk;
+    });
+    window.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+
+    // Touch support
+    container.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      isHovering = true;
+      startX = e.touches[0].pageX;
+      currentX = offset;
+    }, { passive: true });
+    window.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      const x = e.touches[0].pageX;
+      const walk = (startX - x) * 1.5;
+      offset = currentX + walk;
+    }, { passive: true });
+    window.addEventListener('touchend', () => {
+      isDragging = false;
+      isHovering = false;
+    });
+
+    function loop() {
+      if (!isDragging) {
+        // Smoothly interpolate speed
+        const targetSpeed = isHovering ? SLOW_SPEED : NORMAL_SPEED;
+        currentSpeed += (targetSpeed - currentSpeed) * 0.1;
+        offset += currentSpeed;
+      }
+
+      if (track.children.length >= 2) {
+        const singleSlideWidth = track.children[0].getBoundingClientRect().width;
+        const gapStyle = window.getComputedStyle(track).columnGap || window.getComputedStyle(track).gap || "0";
+        const gap = parseFloat(gapStyle);
+        const totalItems = track.children.length / 2;
+        const halfWidth = totalItems * (singleSlideWidth + gap);
+
+        // Seamless wrap
+        if (offset >= halfWidth) {
+          offset -= halfWidth;
+          if (isDragging) currentX -= halfWidth; 
+        } else if (offset < 0) {
+          offset += halfWidth;
+          if (isDragging) currentX += halfWidth;
+        }
+      }
+
+      track.style.transform = `translate3d(-${offset}px, 0, 0)`;
+      rafId = requestAnimationFrame(loop);
+    }
+    
+    // Clear existing RAF on HMR (Astro hot reload)
+    if ((window as any)._testimonialsRaf) {
+      cancelAnimationFrame((window as any)._testimonialsRaf);
+    }
+    
+    rafId = requestAnimationFrame(loop);
+    (window as any)._testimonialsRaf = rafId;
   }
 
-  function goTo(idx: number) {
-    const maxStep = total - visibleCount;
-    current = Math.max(0, Math.min(idx, maxStep));
-    const offset = current * (slideWidth() + GAP);
-    slidesEl.style.transform = `translateX(-${offset}px)`;
-    updateDots();
-  }
-
-  function init() {
-    visibleCount = window.innerWidth < 768 ? 1 : 3;
-    buildDots();
-    setSlideSizes();
-    current = 0;
-    goTo(0);
-  }
-
-  document.getElementById('t-prev')!.addEventListener('click', () => goTo(current - 1));
-  document.getElementById('t-next')!.addEventListener('click', () => goTo(current + 1));
-
-  setInterval(() => {
-    const maxStep = total - visibleCount;
-    goTo(current < maxStep ? current + 1 : 0);
-  }, 4000);
-
-  window.addEventListener('resize', init);
-
-  // Swipe
-  let startX = 0;
-  const track = document.getElementById('t-track')!;
-  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-  track.addEventListener('touchend', e => {
-    const diff = startX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) goTo(current + (diff > 0 ? 1 : -1));
-  });
-
-  init();
+  // Init
+  setupCarousel();
+  document.addEventListener('astro:page-load', setupCarousel);
 </script>

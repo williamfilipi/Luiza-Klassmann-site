@@ -52,8 +52,10 @@
         <div class="grid grid-cols-2 gap-6 pt-8">
           <!-- Autoridade -->
           <div
-            class="about-feat-card rounded-2xl p-5 border border-brand-terracotta/10 bg-brand-terracotta/5 space-y-3"
+            class="about-feat-card relative rounded-2xl p-5 border border-brand-terracotta/10 bg-brand-terracotta/5 space-y-3"
+            style="--snake-color: #C17A62;"
           >
+            <div class="snake-border"></div>
             <div
               class="w-10 h-10 bg-brand-terracotta/10 rounded-xl flex items-center justify-center text-brand-terracotta"
             >
@@ -81,8 +83,10 @@
 
           <!-- Mentora -->
           <div
-            class="about-feat-card rounded-2xl p-5 border border-brand-sage/10 bg-brand-sage/5 space-y-3"
+            class="about-feat-card relative rounded-2xl p-5 border border-brand-sage/10 bg-brand-sage/5 space-y-3"
+            style="--snake-color: #8A9A79;"
           >
+            <div class="snake-border"></div>
             <div
               class="w-10 h-10 bg-brand-sage/10 rounded-xl flex items-center justify-center text-brand-sage"
             >
@@ -112,8 +116,10 @@
 
           <!-- Performance -->
           <div
-            class="about-feat-card rounded-2xl p-5 border border-brand-gold/10 bg-brand-gold/5 space-y-3"
+            class="about-feat-card relative rounded-2xl p-5 border border-brand-gold/10 bg-brand-gold/5 space-y-3"
+            style="--snake-color: #C5A059;"
           >
+            <div class="snake-border"></div>
             <div
               class="w-10 h-10 bg-brand-gold/10 rounded-xl flex items-center justify-center text-brand-gold"
             >
@@ -141,8 +147,10 @@
 
           <!-- Cuidado -->
           <div
-            class="about-feat-card rounded-2xl p-5 border border-brand-terracotta/10 bg-brand-terracotta/5 space-y-3"
+            class="about-feat-card relative rounded-2xl p-5 border border-brand-terracotta/10 bg-brand-terracotta/5 space-y-3"
+            style="--snake-color: #C17A62;"
           >
+            <div class="snake-border"></div>
             <div
               class="w-10 h-10 bg-brand-terracotta/10 rounded-xl flex items-center justify-center text-brand-terracotta"
             >
@@ -173,6 +181,34 @@
 </section>
 
 <style>
+  .snake-border {
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1.5px;
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .snake-border::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250%;
+    height: 250%;
+    background: conic-gradient(from 0deg, transparent 70%, var(--snake-color) 100%);
+    transform: translate(-50%, -50%);
+    animation: spin-snake 4s linear infinite;
+  }
+  @keyframes spin-snake {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+  }
   .reveal {
     opacity: 0;
     transform: translateY(30px);
